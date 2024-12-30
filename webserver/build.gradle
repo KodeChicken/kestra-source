@@ -2,7 +2,7 @@ publishSonatypePublicationPublicationToSonatypeRepository.enabled = false
 
 if (rootProject.name == "kestra") {
     processResources {
-        dependsOn(':ui:assembleFrontend')
+//        dependsOn(':ui:assembleFrontend')
     }
 }
 

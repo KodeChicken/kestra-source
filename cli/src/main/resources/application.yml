@@ -40,6 +40,12 @@ micronaut:
           - /health/.+
           - /prometheus
     http-version: HTTP_1_1
+    cors:
+      enabled: true
+      configurations:
+        all:
+          allowedOrigins:
+            - http://localhost:5173
   caches:
     default:
       maximum-weight: 10485760

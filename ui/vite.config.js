@@ -4,7 +4,6 @@ import vue from "@vitejs/plugin-vue";
 import {visualizer} from "rollup-plugin-visualizer";
 
 import {filename} from "./plugins/filename"
-import {commit} from "./plugins/commit"
 
 export default defineConfig({
     base: "",
@@ -35,8 +34,7 @@ export default defineConfig({
             }
         }),
         visualizer(),
-        filename(),
-        commit()
+        filename()
     ],
     assetsInclude: ["**/*.md"],
     css: {

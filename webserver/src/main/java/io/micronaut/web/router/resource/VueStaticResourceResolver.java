@@ -13,8 +13,8 @@ import java.util.Optional;
  * StaticResourceResolver hack in order to support ui
  * <a href="https://router.vuejs.org/guide/essentials/history-mode.html">HTML5 History Mode</a>
  */
-@Singleton
-@Replaces(StaticResourceResolver.class)
+//@Singleton
+//@Replaces(StaticResourceResolver.class)
 public class VueStaticResourceResolver extends StaticResourceResolver {
     private List<ResourceLoader> uiResourceLoader;
 
