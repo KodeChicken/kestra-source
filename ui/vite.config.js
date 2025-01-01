@@ -6,7 +6,7 @@ import eslintPlugin from "vite-plugin-eslint";
 import * as sass from "sass"
 
 import {filename} from "./plugins/filename"
-import {commit} from "./plugins/commit"
+// import {commit} from "./plugins/commit"
 
 export default defineConfig({
     base: "",
@@ -37,8 +37,8 @@ export default defineConfig({
         }),
         visualizer(),
         eslintPlugin({failOnWarning: true, failOnError: true}),
-        filename(),
-        commit()
+        filename()
+        // commit()
     ],
     assetsInclude: ["**/*.md"],
     css: {
