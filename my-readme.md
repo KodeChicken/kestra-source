@@ -1,5 +1,7 @@
+# 初始化配置项目
+
 ## 迭代1
-1.npm build一下前端工程
+1.npm install一下前端工程
 2. 将[VueStaticResourceResolver.java](webserver/src/main/java/io/micronaut/web/router/resource/VueStaticResourceResolver.java)注释掉，不注入容器中
 
 
@@ -26,3 +28,22 @@ vite.config.js中删除：commit()
 
 ## 迭代4
 看历史commit记录
+总之一句话参考CONTRIBUTING.md文件中的操作来配置项目
+
+# 插件配置
+```text
+# 插件下载
+1.官方插件地址：https://github.com/orgs/kestra-io/repositories?q=plugin-
+2.maven仓库地址：https://repo1.maven.org/maven2/io/kestra/plugin/
+```
+
+# 脚本相关
+```text
+# python等相关任务的运行依赖docker环境，需要本地安装docker并启动docker服务
+```
+
+# 任务输出文件
+```text
+任务执行完的输出文件保存在./data目录下，用命令空间、id、task-id等参数分层命令
+
+```
