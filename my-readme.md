@@ -48,3 +48,18 @@ vite.config.js中删除：commit()
 任务执行完的输出文件保存在./data目录下，用命令空间、id、task-id等参数分层命令
 
 ```
+
+# 注意事项
+```text
+如果您在执行上述流程时遇到任何问题，这可能是与 Docker 相关的问题（例如 Docker in-Docker 设置，这可能很难在 Windows 上配置）。将 runner 属性设置为 PROCESS 以在与流相同的进程中运行 Python 脚本任务，而不是在 Docker 容器中运行，如以下示例所示。这将避免任何与 Docker 相关的问题。
+taskRunner:
+      type: io.kestra.plugin.core.runner.Process
+详细解释以及配置参考：https://kestra.io/docs/tutorial/outputs
+会报错：pip install XXX，会将包安装在全局下，homebrew管理的python禁止全局安装包，目的是为了避免多项目下的依赖冲突，所以推荐虚拟环境下的包安装，所以该问题在kestra自动化运行python脚本时无法解决(也可以用下列方式解决)，只能利用docker环境去运行
+
+sudo ln -s $(which pip3) /usr/local/bin/pip
+sudo ln -s $(which python3) /usr/local/bin/python
+
+sudo pip3 install --break-system-packages polars
+sudo pip3 uninstall polars --break-system-packages
+```
