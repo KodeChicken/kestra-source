@@ -241,12 +241,18 @@ public class FlowController {
         return PagedResults.of(flowRepository.findSourceCode(PageableUtils.from(page, size, sort), query, tenantService.resolveTenant(), namespace));
     }
 
-
+    /**
+     * 创建流程
+     *
+     * @param flow
+     * @return
+     * @throws ConstraintViolationException
+     */
     @ExecuteOn(TaskExecutors.IO)
     @Post(consumes = MediaType.APPLICATION_YAML)
-    @Operation(tags = {"Flows"}, summary = "Create a flow from yaml source")
+    @Operation(tags = {"Flows"}, summary = "(从yaml源创建流)Create a flow from yaml source")
     public HttpResponse<FlowWithSource> create(
-        @Parameter(description = "The flow") @Body String flow
+        @Parameter(description = "(流的yaml源)The flow") @Body String flow
     ) throws ConstraintViolationException {
         Flow flowParsed = yamlParser.parse(flow, Flow.class);
 
@@ -254,6 +260,8 @@ public class FlowController {
     }
 
     /**
+     * 创建流程，已经过期
+     *
      * @deprecated use {@link #create(String)} instead
      */
     @ExecuteOn(TaskExecutors.IO)

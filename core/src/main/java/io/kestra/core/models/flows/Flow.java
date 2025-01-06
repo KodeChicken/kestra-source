@@ -44,6 +44,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * 流程定义实体类
+ *
+ */
 @SuperBuilder(toBuilder = true)
 @Getter
 @NoArgsConstructor

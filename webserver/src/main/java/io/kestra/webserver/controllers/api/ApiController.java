@@ -19,7 +19,7 @@ public class ApiController {
     }
 
     protected String getSwaggerFilename() {
-        return "kestra.yml";
+        return "kestra-1.0.0.yml";
     }
 
     @Get()
